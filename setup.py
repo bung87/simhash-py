@@ -52,6 +52,9 @@ setup(
     packages=[
         'simhash'
     ],
+    setup_requires=[
+        'cython',
+    ],
     package_dir={
         'simhash': 'simhash'
     },
