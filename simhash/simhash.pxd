@@ -5,14 +5,15 @@
 from libcpp.vector cimport vector
 from libcpp.utility cimport pair
 from libcpp.unordered_set cimport unordered_set
+from libc cimport stdint
 
 cdef extern from "stdint.h":
-    ctypedef unsigned long long uint64_t
-    ctypedef          long long  int64_t
-    ctypedef unsigned int       size_t
+    ctypedef stdint.uint64_t uint64_t
+    ctypedef stdint.int64_t int64_t
+    ctypedef unsigned int  size_t
 
 cdef extern from "simhash-cpp/include/simhash.h" namespace "Simhash":
-    ctypedef uint64_t hash_t
+    ctypedef stdint.uint64_t hash_t
     ctypedef pair[hash_t, hash_t] match_t
 
     cppclass match_t_hash:
